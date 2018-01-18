@@ -18,8 +18,8 @@ class CreatePatientsTable extends Migration
             $table->timestamps();
             $table->string('patient_name');
             $table->string('last_name');
-            $table->integer('dvmax_id');
-            $table->date('date_of_birth');
+            $table->integer('dvmax_id')->nullable();
+            $table->date('date_of_birth')->nullable();
         });
     }
 
