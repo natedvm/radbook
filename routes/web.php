@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/', 'StudyController@index')->middleware('auth');
 
 Auth::routes();
 
