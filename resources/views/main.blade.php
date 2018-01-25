@@ -1,5 +1,9 @@
 @extends ('layouts.app')
 
+@section('pagescript')
+    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row">

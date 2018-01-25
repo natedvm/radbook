@@ -1,7 +1,9 @@
 $(document).ready(function () {
-    var table = $('#studyTable').DataTable({
+
+    $('#studyTable').DataTable({
         "columnDefs": [
             {"className": "dt-center", "targets": "_all"}
         ]
     });
-}
+});
+
