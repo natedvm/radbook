@@ -2,7 +2,14 @@ $(document).ready(function () {
 
     $('#studyTable').DataTable({
         "columnDefs": [
-            {"className": "dt-center", "targets": "_all"}
+            {
+                "targets": [0,1, 2],
+                "visible": false
+            },
+            {
+                "className": "dt-center",
+                "targets": "_all"
+            }
         ]
     });
 });

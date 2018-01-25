@@ -10,10 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-
-
-
-    <!-- Styles -->
+    <!-- Styles - compiled from resources folder using mix -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
@@ -83,8 +80,8 @@
     <script src="{{ asset('js/app.js') }}"></script>
 
     {{--datatables css and js files for entire app--}}
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.js"></script>
 
     @yield('pagescript')
 
