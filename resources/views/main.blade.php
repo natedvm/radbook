@@ -11,8 +11,17 @@
                 <table id="studyTable" class="table table-bordered table-hover">
                     <thead>
                     <tr>
+                        <th class="dvmax_id">
+                            DVMax ID
+                        </th>
+                        <th class="patient_name">
+                            Patient Name
+                        </th>
+                        <th class="last_name">
+                            Last Name
+                        </th>
                         @foreach($headers as $header)
-                            <th id="{{$header}}_header">
+                            <th class="{{$header}}">
                                 {{ App\Study::convertToDisplayFormat($header)}}
                             </th>
                         @endforeach
@@ -22,6 +31,15 @@
                     <tbody>
                     @foreach($studies as $study)
                         <tr ondblclick="window.location='#'">
+                            <td>
+                                test
+                            </td>
+                            <td>
+                                test
+                            </td>
+                            <td>
+                                test
+                            </td>
                             {{--TODO - add link to correct edit study locaiton--}}
                             @foreach($study->toArray() as $data)
                                 <td>

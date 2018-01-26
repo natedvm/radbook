@@ -9,7 +9,7 @@ class Study extends Model
     //
     public function patient()
     {
-        $this->belongsTo(Patient::class);
+        return $this->belongsTo(Patient::class);
     }
 
     public static function returnColumnHeaders()

@@ -3,7 +3,12 @@ $(document).ready(function () {
     $('#studyTable').DataTable({
         "columnDefs": [
             {
-                "targets": [0,1, 2],
+                "targets": [
+                    'id',
+                    'created_at',
+                    'updated_at',
+                    'patient_id'
+                ],
                 "visible": false
             },
             {
