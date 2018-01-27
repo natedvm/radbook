@@ -13,6 +13,10 @@
 
 Route::get('/', 'StudyController@index')->middleware('auth');
 
+Route::get('doctor', 'StudyController@doctorIndex');
+
+Route::get('coordinator', 'StudyController@coordinatorIndex');
+
 Auth::routes();
 
 
