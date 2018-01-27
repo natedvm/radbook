@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DebugBar\DebugBar;
 use Illuminate\Http\Request;
 use App\Study;
 
@@ -13,6 +14,7 @@ class StudyController extends Controller
     {
         $headers = Study::returnColumnHeaders();
         $studies = Study::all();
-        return view('main', ['studies' => $studies, 'headers' => $headers]);
+
+        return view('main', ['studies' => $studies, 'headers' => $headers ]);
     }
 }

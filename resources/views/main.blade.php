@@ -32,16 +32,18 @@
                     @foreach($studies as $study)
                         <tr ondblclick="window.location='#'">
                             <td>
-                                test
+                                {{$study->patient->dvmax_id}}
                             </td>
                             <td>
-                                test
+                                {{$study->patient->patient_name}}
+
                             </td>
                             <td>
-                                test
+                                {{$study->patient->last_name}}
+
                             </td>
                             {{--TODO - add link to correct edit study locaiton--}}
-                            @foreach($study->toArray() as $data)
+                            @foreach($study->getAttributes() as $data)
                                 <td>
                                     {{$data}}
                                 </td>

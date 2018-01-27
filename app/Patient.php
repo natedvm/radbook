@@ -9,6 +9,6 @@ class Patient extends Model
     //
     public function studies()
     {
-        return $this->hasMany('App\Study');
+        return $this->hasMany(Study::class);
     }
 }
