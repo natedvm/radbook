@@ -4,6 +4,7 @@
     <script type="text/javascript" src="{{asset('js/coordinatorIndex.js')}}"></script>
 @endsection
 
+
 @section('content')
     <div class="container">
         <div class="row">
@@ -22,6 +23,9 @@
                         </th>
                         <th class="doctor_name">
                             Doctor Name
+                        </th>
+                        <th>
+                            Date Entered
                         </th>
                     </tr>
                     </thead>
@@ -42,6 +46,9 @@
                             </td>
                             <td>
                                 {{$study->doctor_name}}
+                            </td>
+                            <td>
+                                {{$study->date_entered}}
                             </td>
                         </tr>
                     @endforeach

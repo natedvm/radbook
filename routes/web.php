@@ -32,6 +32,9 @@ Route::get('doctor/view/{id}', 'StudyController@doctorView')->middleware('auth')
 Route::get('coordinator/view/{id}', 'StudyController@coordinatorView')->middleware('auth')
     ->name('coordinatorView');
 
+Route::get('coordinator/add/{patient_id}', 'StudyController@coordinatorAdd')->middleware('auth')
+    ->name('coordinatorAdd');
+
 Auth::routes();
 
 

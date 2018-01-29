@@ -51,4 +51,14 @@ class StudyController extends Controller
     public function coordinatorView($id){
         return view('coordinatorView');
     }
+
+    public function coordinatorAdd($patient_id = null)
+    {
+        return view('coordinatorAdd','patient_id' = $patient_id);
+    }
+
+    public function postCoordinatorAdd()
+    {
+
+    }
 }
