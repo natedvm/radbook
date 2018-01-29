@@ -17,17 +17,19 @@ class CreateStudiesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('patient_id');
+            $table->string('rdvm')->nullable();
+            $table->string('rdvm_phone')->nullable();
+            $table->text('history')->nullable();
+            $table->string('doctor_assigned')->nullable();
             $table->text('notes')->nullable();
-            $table->text('interpretation')->nullable();;
-            $table->text('conclusion')->nullable();;
-            $table->boolean('ready_to_be_read')->nullable();;
-            $table->boolean('read_by_doctor')->nullable();;
-            $table->boolean('completed_by_coordinator')->nullable();;
-            $table->date('date_entered')->nullable();;
-            $table->date('date_read')->nullable();;
-            $table->date('date_completed')->nullable();;
-
-
+            $table->text('interpretation')->nullable();
+            $table->text('conclusion')->nullable();
+            $table->boolean('ready_to_be_read')->nullable();
+            $table->boolean('read_by_doctor')->nullable();
+            $table->boolean('completed_by_coordinator')->nullable();
+            $table->date('date_entered')->nullable();
+            $table->date('date_read')->nullable();
+            $table->date('date_completed')->nullable();
         });
     }
 

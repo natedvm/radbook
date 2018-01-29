@@ -14,8 +14,11 @@ $(document).ready(function () {
             {
                 "className": "dt-center",
                 "targets": "_all"
+            },
+            {
+                "width": 100,
+                "targets": 'dvmax_id'
             }
         ]
     });
 });
-

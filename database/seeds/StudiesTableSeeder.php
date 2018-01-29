@@ -13,6 +13,7 @@ class StudiesTableSeeder extends Seeder
     {
         $study = new \App\Study([
             'patient_id' => 1,
+            'doctor_assigned' => 'Miller',
             'notes' =>'some notes',
             'interpretation' => 'an interpretation',
             'conclusion' => 'my conclusion'

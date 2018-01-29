@@ -1,11 +1,12 @@
 @extends ('layouts.app')
 
 @section('pagescript')
-    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/coordinatorIndex.js')}}"></script>
 @endsection
 
 @section('content')
     <div class="container">
+        This is the coordinator page
         <div class="row">
             <div class="col-lg-12">
                 <table id="studyTable" class="table table-bordered table-hover">

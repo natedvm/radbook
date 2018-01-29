@@ -1,7 +1,7 @@
 @extends ('layouts.app')
 
 @section('pagescript')
-    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/doctorIndex.js')}}"></script>
 @endsection
 
 @section('content')
@@ -16,39 +16,33 @@
                             DVMax ID
                         </th>
                         <th class="patient_name">
-                            Patient Name
+                            Name
                         </th>
-                        <th class="last_name">
-                            Last Name
+                       <th class="doctor_assigned">
+                            Doctor
                         </th>
-                        @foreach($headers as $header)
-                            <th class="{{$header}}">
-                                {{ App\Study::convertToDisplayFormat($header)}}
-                            </th>
-                        @endforeach
+                        <th class="date_entered">
+                            Date Entered
+                        </th>
                     </tr>
                     </thead>
 
                     <tbody>
                     @foreach($studies as $study)
-                        <tr ondblclick="window.location='#'">
+                        <tr ondblclick="window.location='{{route('doctorEdit',['id' => $study->id])}}'">
                             <td>
                                 {{$study->patient->dvmax_id}}
                             </td>
                             <td>
-                                {{$study->patient->patient_name}}
-
+                                {{$study->patient->patient_name . ' ' . $study->patient->last_name}}
                             </td>
                             <td>
-                                {{$study->patient->last_name}}
-
+                                {{$study->doctor_assigned}}
                             </td>
-                            {{--TODO - add link to correct edit study locaiton--}}
-                            @foreach($study->getAttributes() as $data)
-                                <td>
-                                    {{$data}}
-                                </td>
-                            @endforeach
+                            <td>
+                                {{$study->date_entered}}
+                            </td>
+
                         </tr>
                     @endforeach
                     </tbody>

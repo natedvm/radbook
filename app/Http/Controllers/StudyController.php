@@ -15,17 +15,15 @@ class StudyController extends Controller
         if(\Auth::user()->doctor){
            return redirect('doctor');
         }
-        if(\Auth::user()->coordinator){
+        else{
             return redirect('coordinator');
         }
-        return view('main');
     }
 
     public function doctorIndex(){
         $studies = Study::all();
-        $headers = Study::returnColumnHeaders();
 
-        return view('doctor',['headers' => $headers, 'studies' => $studies]);
+        return view('doctorIndex',['studies' => $studies]);
     }
 
     public function coordinatorIndex()
@@ -33,7 +31,24 @@ class StudyController extends Controller
         $studies = Study::all();
         $headers = Study::returnColumnHeaders();
 
-        return view('coordinator',['headers' => $headers,'studies' => $studies]);
+        return view('coordinatorIndex',['headers' => $headers,'studies' => $studies]);
 
+    }
+
+    public function doctorEdit($id)
+    {
+        return view('doctorEdit');
+    }
+
+    public function coordinatorEdit($id){
+        return view('coordinatorEdit');
+    }
+
+    public function doctorView($id){
+        return view('doctorView');
+    }
+
+    public function coordinatorView($id){
+        return view('coordinatorView');
     }
 }
