@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
-Testing
+    <div class="row">
+        <div
+    </div>
 </div>
 @endsection

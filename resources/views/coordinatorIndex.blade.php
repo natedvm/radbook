@@ -6,7 +6,6 @@
 
 @section('content')
     <div class="container">
-        This is the coordinator page
         <div class="row">
             <div class="col-lg-12">
                 <table id="studyTable" class="table table-bordered table-hover">
@@ -21,17 +20,15 @@
                         <th class="last_name">
                             Last Name
                         </th>
-                        @foreach($headers as $header)
-                            <th class="{{$header}}">
-                                {{ App\Study::convertToDisplayFormat($header)}}
-                            </th>
-                        @endforeach
+                        <th class="doctor_name">
+                            Doctor Name
+                        </th>
                     </tr>
                     </thead>
 
                     <tbody>
                     @foreach($studies as $study)
-                        <tr ondblclick="window.location='#'">
+                        <tr ondblclick="window.location='{{route('coordinatorEdit',['id' => $study->id])}}'">
                             <td>
                                 {{$study->patient->dvmax_id}}
                             </td>
@@ -43,12 +40,9 @@
                                 {{$study->patient->last_name}}
 
                             </td>
-                            {{--TODO - add link to correct edit study locaiton--}}
-                            @foreach($study->getAttributes() as $data)
-                                <td>
-                                    {{$data}}
-                                </td>
-                            @endforeach
+                            <td>
+                                {{$study->doctor_name}}
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

@@ -11,22 +11,26 @@
 |
 */
 
-Route::get('/', 'StudyController@index')->middleware('auth');
+Route::get('/', 'StudyController@index')->middleware('auth')
+    ->name('home');
 
 Route::get('doctor', 'StudyController@doctorIndex')->middleware('auth')
-->name('doctorIndex');
+    ->name('doctorIndex');
 
 Route::get('coordinator', 'StudyController@coordinatorIndex')->middleware('auth')
-->name('coordinatorIndex');
+    ->name('coordinatorIndex');
 
 Route::get('doctor/edit/{id}', 'StudyController@doctorEdit')->middleware('auth')
     ->name('doctorEdit');
 
-Route::get('coordinator/edit/{id}', 'StudyController@coordinatorEdit')->middleware('auth');
+Route::get('coordinator/edit/{id}', 'StudyController@coordinatorEdit')->middleware('auth')
+    ->name('coordinatorEdit');
 
-Route::get('doctor/view/{id}', 'StudyController@doctorView')->middleware('auth');
+Route::get('doctor/view/{id}', 'StudyController@doctorView')->middleware('auth')
+    ->name('doctorView');
 
-Route::get('coordinator/view/{id}', 'StudyController@coordinatorView')->middleware('auth');
+Route::get('coordinator/view/{id}', 'StudyController@coordinatorView')->middleware('auth')
+    ->name('coordinatorView');
 
 Auth::routes();
 

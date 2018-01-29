@@ -6,7 +6,6 @@
 
 @section('content')
     <div class="container">
-        This is the doctor page
         <div class="row">
             <div class="col-lg-12">
                 <table id="studyTable" class="table table-bordered table-hover">
