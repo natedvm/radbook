@@ -26,19 +26,15 @@ Route::get('doctor/edit/{id}', 'StudyController@doctorEdit')->middleware('auth')
 Route::get('coordinator/edit/{id}', 'StudyController@coordinatorEdit')->middleware('auth')
     ->name('coordinatorEdit');
 
-Route::get('doctor/view/{id}', 'StudyController@doctorView')->middleware('auth')
-    ->name('doctorView');
-
-Route::get('coordinator/view/{id}', 'StudyController@coordinatorView')->middleware('auth')
-    ->name('coordinatorView');
-
 Route::get('coordinator/add/{patient_id?}', 'StudyController@coordinatorAdd')->middleware('auth')
     ->name('coordinatorAdd');
 
-Route::get('pickPatient','PatientController@patientPickForNewStudy')->middleware('auth')
-    ->name('pickPatient');
+Route::get('patient/select','PatientController@select')->middleware('auth')
+    ->name('patientSelect');
 
-Route::get('addPatient')
+Route::get('patient/add','PatientController@add')->middleware('auth')
+    ->name('patientAdd');
+
 
 Auth::routes();
 

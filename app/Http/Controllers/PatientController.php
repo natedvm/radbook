@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 class PatientController extends Controller
 {
     //
-    public function patientPickForNewStudy()
+    public function select()
     {
 
     }
 
-    public function patientAdd()
+    public function add()
     {
 
     }

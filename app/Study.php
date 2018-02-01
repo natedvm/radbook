@@ -11,18 +11,4 @@ class Study extends Model
     {
         return $this->belongsTo(Patient::class);
     }
-
-    public static function returnColumnHeaders()
-    {
-        $temp = new Study();
-        $headers = \Schema::getColumnListing($temp->getTable());
-        return $headers;
-    }
-
-    public static function convertToDisplayFormat($header)
-    {
-        $header = str_replace('_',' ',$header);
-        $header = ucfirst($header);
-        return $header;
-    }
 }

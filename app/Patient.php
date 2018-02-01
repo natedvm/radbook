@@ -11,4 +11,5 @@ class Patient extends Model
     {
         return $this->hasMany(Study::class);
     }
+
 }

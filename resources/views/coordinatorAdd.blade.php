@@ -3,7 +3,6 @@
 @section ('content')
     <div class="container">
         <div class="row">
-                @if
                 <div class="col-md-6">
                     <div class="panel">
                         <div class="panel-heading">

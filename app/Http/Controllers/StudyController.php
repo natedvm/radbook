@@ -12,26 +12,25 @@ class StudyController extends Controller
 
     public function index()
     {
-        if(\Auth::user()->doctor){
-           return redirect('doctor');
-        }
-        else{
+        if (\Auth::user()->doctor) {
+            return redirect('doctor');
+        } else {
             return redirect('coordinator');
         }
     }
 
-    public function doctorIndex(){
+    public function doctorIndex()
+    {
         $studies = Study::all();
 
-        return view('doctorIndex',['studies' => $studies]);
+        return view('doctorIndex', ['studies' => $studies]);
     }
 
     public function coordinatorIndex()
     {
         $studies = Study::all();
-        $headers = Study::returnColumnHeaders();
 
-        return view('coordinatorIndex',['headers' => $headers,'studies' => $studies]);
+        return view('coordinatorIndex', ['studies' => $studies]);
 
     }
 
@@ -40,21 +39,28 @@ class StudyController extends Controller
         return view('doctorEdit');
     }
 
-    public function coordinatorEdit($id){
+    public function coordinatorEdit($id)
+    {
         return view('coordinatorEdit');
     }
 
-    public function doctorView($id){
+    public function doctorView($id)
+    {
         return view('doctorView');
     }
 
-    public function coordinatorView($id){
+    public function coordinatorView($id)
+    {
         return view('coordinatorView');
     }
 
     public function coordinatorAdd($patient_id = null)
     {
-        return view('coordinatorAdd','patient_id' = $patient_id);
+        if ($patient_id) {
+            return view('coordinatorAdd', ['patient_id' => $patient_id]);
+        } else {
+            redirect();
+        }
     }
 
     public function postCoordinatorAdd()
