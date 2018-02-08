@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use DebugBar\DebugBar;
 use Illuminate\Http\Request;
 use App\Study;
 
@@ -41,7 +40,8 @@ class StudyController extends Controller
 
     public function coordinatorEdit($id)
     {
-        return view('coordinatorEdit');
+        $study = Study::find($id);
+        return view('coordinatorEdit',['study' => $study]);
     }
 
     public function doctorView($id)
